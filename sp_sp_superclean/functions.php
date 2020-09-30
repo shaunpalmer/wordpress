@@ -110,7 +110,9 @@ https://wordpress.stackexchange.com/questions/66972/add-a-second-menu-to-a-theme
 				'script',
 			)
 		);
-
+		add_theme_support( 'post-formats', array(
+					        'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
+				 ) );
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',

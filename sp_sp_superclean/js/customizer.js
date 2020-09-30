@@ -40,3 +40,6 @@
 		} );
 	} );
 }( jQuery ) );
+/*
+https://wordpress.stackexchange.com/questions/59539/jquery-in-wordpress-why-is-it-not-working
+*/
