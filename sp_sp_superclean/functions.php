@@ -55,15 +55,46 @@ if ( ! function_exists( 'sp_sp_superclean_setup' ) ) :
 		add_theme_support( 'wp-block-styles' );
 		// Editor Styles
 		add_theme_support( 'editor-styles' );
-
+		/*add_editor_style( 'assets/css/editor-style.css' );*/
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'sp_sp_superclean' ),
+				'secondary-menu' => esc_html__( 'secondary-menu', 'sp_sp_superclean' ),
 			)
 		);
 
 		/*
+		register_nav_menus(
+					array(
+						'secondary-menu' => esc_html__( 'secondary-menu', 'sp_sp_superclean' ),
+					)
+				);
+=======================================================
+
+
+function register_my_menus() {
+    register_nav_menus(
+        array(
+            'first-menu' => __( 'First Menu' ),
+            'second-menu' => __( 'Second Menu' ),
+            'third-menu' => __( 'Third Menu' )
+        )
+    );
+}
+add_action( 'init', 'register_my_menus' );
+
+2. Embedding them in desired place in your theme:
+<?php wp_nav_menu( array( 'theme_location' => 'first-menu' ) ); ?>
+
+https://wordpress.stackexchange.com/questions/66972/add-a-second-menu-to-a-theme-that-only-support-1-menu
+=======================================================
+
+
+
+			*/
+
+			/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
