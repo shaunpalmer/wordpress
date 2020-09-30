@@ -7,9 +7,9 @@
  * @package SuperClean_Pro
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'sp_sp_superclean_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'sp_superclean_VERSION', '1.1.0' );
 }
 
 if ( ! function_exists( 'sp_sp_superclean_setup' ) ) :
@@ -44,8 +44,17 @@ if ( ! function_exists( 'sp_sp_superclean_setup' ) ) :
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+
+		 add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'align-wide' );
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 		 */
 		add_theme_support( 'post-thumbnails' );
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+		// Editor Styles
+		add_theme_support( 'editor-styles' );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
